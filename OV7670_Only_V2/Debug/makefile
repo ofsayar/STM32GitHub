@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := OV7670_Only
+BUILD_ARTIFACT_NAME := OV7670_Only_V2
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-OV7670_Only.elf \
+OV7670_Only_V2.elf \
 
 MAP_FILES += \
-OV7670_Only.map \
+OV7670_Only_V2.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-OV7670_Only.list \
+OV7670_Only_V2.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: OV7670_Only.elf secondary-outputs
+main-build: OV7670_Only_V2.elf secondary-outputs
 
 # Tool invocations
-OV7670_Only.elf OV7670_Only.map: $(OBJS) $(USER_OBJS) C:\Users\ofsayarr\STM32CubeIDE\workspace_1.13.2\OV7670_Only\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "OV7670_Only.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ofsayarr\STM32CubeIDE\workspace_1.13.2\OV7670_Only\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OV7670_Only.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+OV7670_Only_V2.elf OV7670_Only_V2.map: $(OBJS) $(USER_OBJS) C:\STM32GitHub\OV7670_Only_V2\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "OV7670_Only_V2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\STM32GitHub\OV7670_Only_V2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OV7670_Only_V2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-OV7670_Only.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "OV7670_Only.list"
+OV7670_Only_V2.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "OV7670_Only_V2.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) OV7670_Only.elf OV7670_Only.list OV7670_Only.map default.size.stdout
+	-$(RM) OV7670_Only_V2.elf OV7670_Only_V2.list OV7670_Only_V2.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

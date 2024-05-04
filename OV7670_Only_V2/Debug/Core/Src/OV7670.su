@@ -1,0 +1,14 @@
+../Core/Src/OV7670.c:35:9:OV7670_Init	32	static
+../Core/Src/OV7670.c:63:6:OV7670_Config	24	static
+../Core/Src/OV7670.c:78:6:OV7670_Start	16	static
+../Core/Src/OV7670.c:90:6:OV7670_Stop	8	static
+../Core/Src/OV7670.c:109:6:OV7670_SetFrameRate	16	static
+../Core/Src/OV7670.c:118:6:OV7670_SetColorFormat	24	static
+../Core/Src/OV7670.c:145:6:OV7670_SetFrameControl	24	static
+../Core/Src/OV7670.c:156:6:OV7670_SetResolution	16	static
+../Core/Src/OV7670.c:201:6:OV7670_UpdateSettings	16	static
+../Core/Src/OV7670.c:224:19:OV7670_Write	40	static
+../Core/Src/OV7670.c:236:19:OV7670_Read	32	static
+../Core/Src/OV7670.c:256:6:HAL_DCMI_FrameEventCallback	16	static
+../Core/Src/OV7670.c:272:6:HAL_DCMI_LineEventCallback	16	static
+../Core/Src/OV7670.c:280:6:HAL_DCMI_VsyncEventCallback	16	static
